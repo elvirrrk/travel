@@ -1,44 +1,14 @@
-const desktopSections = [
-  {section: 'hero', misMatchThreshold: 0.5},
-  {section: 'about', misMatchThreshold: 0.5},
-  {section: 'price', misMatchThreshold: 0.5},
-  {section: 'games', misMatchThreshold: 0.5},
-  {section: 'juri', misMatchThreshold: 0.5},
-  {section: 'features', misMatchThreshold: 0.8},
-  {section: 'offers', misMatchThreshold: 0.5},
-  {section: 'faq', misMatchThreshold: 0.8},
-  {section: 'reviews', misMatchThreshold: 0.5},
-  {section: 'form', misMatchThreshold: 0.8},
-  {section: 'footer', misMatchThreshold: 0.8}
-];
-
-const tabletSections = [
-  {section: 'hero', misMatchThreshold: 1.0},
-  {section: 'about', misMatchThreshold: 0.7},
-  {section: 'price', misMatchThreshold: 0.5},
-  {section: 'games', misMatchThreshold: 0.5},
-  {section: 'juri', misMatchThreshold: 0.5},
-  {section: 'features', misMatchThreshold: 1.4},
-  {section: 'offers', misMatchThreshold: 0.5},
-  {section: 'faq', misMatchThreshold: 1.6},
-  {section: 'reviews', misMatchThreshold: 1.0},
-  {section: 'form', misMatchThreshold: 1.0},
-  {section: 'footer', misMatchThreshold: 1.9}
-];
-
-const mobileSections = [
-  {section: 'hero', misMatchThreshold: 3.7},
-  {section: 'about', misMatchThreshold: 1.8},
-  {section: 'price', misMatchThreshold: 0.8},
-  {section: 'games', misMatchThreshold: 0.5},
-  {section: 'juri', misMatchThreshold: 0.7},
-  {section: 'features', misMatchThreshold: 2.2},
-  {section: 'offers', misMatchThreshold: 1.3},
-  {section: 'faq', misMatchThreshold: 1.7},
-  {section: 'reviews', misMatchThreshold: 2.6},
-  {section: 'form', misMatchThreshold: 1.6},
-  {section: 'footer', misMatchThreshold: 2.0}
-];
+const indexSections = [
+  {section: 'header', misMatchThreshold: 0.3},
+  {section: 'hero', misMatchThreshold: 0.3},
+  {section: 'tours', misMatchThreshold: 0.3},
+  {section: 'training', misMatchThreshold: 0.3},
+  {section: 'about', misMatchThreshold: 0.3},
+  {section: 'reviews', misMatchThreshold: 0.3},
+  {section: 'adv', misMatchThreshold: 0.3},
+  {section: 'gallery', misMatchThreshold: 0.3},
+  {section: 'form', misMatchThreshold: 0.3},
+  {section: 'footer', misMatchThreshold: 0.3}
 
 const VIEWPORTS = {
   'desktop': {"label": "desktop", "width": 1366, "height": 800},
@@ -61,7 +31,6 @@ function generateScenario(section, misMatchThreshold, viewport) {
     "viewports": [VIEWPORTS[viewport]]
   };
 }
-
 
 module.exports = {
   "id": "supergym test-pp",
@@ -107,7 +76,7 @@ module.exports = {
   "engine": "puppeteer",
   "engineOptions": {
     "args": ["--no-sandbox"],
-    "gotoParameters": {"waitUntil": ["load", "networkidle0"], timeout: 10000},
+    "gotoParameters": {"waitUntil": ["load", "networkidle0"], timeout: 30000},
   },
   "asyncCaptureLimit": 10,
   "asyncCompareLimit": 50,
