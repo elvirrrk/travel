@@ -9,6 +9,7 @@ const indexSections = [
   {section: 'gallery', misMatchThreshold: 0.3},
   {section: 'form', misMatchThreshold: 0.3},
   {section: 'footer', misMatchThreshold: 0.3}
+]
 
 const VIEWPORTS = {
   'desktop': {"label": "desktop", "width": 1366, "height": 800},
@@ -28,12 +29,12 @@ function generateScenario(section, misMatchThreshold, viewport) {
     misMatchThreshold: misMatchThreshold || 5,
     requireSameDimensions: true,
     delay: 500,
-    "viewports": [VIEWPORTS[viewport]]
+    ...viewport ? {"viewports": [VIEWPORTS[viewport]]} : {}
   };
 }
 
 module.exports = {
-  "id": "supergym test-pp",
+  "id": "tours test-pp",
   "onReadyScript": "onReady.cjs",
   "onBeforeScript": "onBefore.cjs",
   "viewports": [
@@ -60,9 +61,7 @@ module.exports = {
     scaleToSameSize: false
   },
   "scenarios": [
-    ...desktopSections.map(({section, misMatchThreshold}) => generateScenario(section, misMatchThreshold, 'desktop')),
-    ...tabletSections.map(({section, misMatchThreshold}) => generateScenario(section, misMatchThreshold, 'tablet')),
-    ...mobileSections.map(({section, misMatchThreshold}) => generateScenario(section, misMatchThreshold, 'mobile')),
+    ...indexSections.map(({section, misMatchThreshold}) => generateScenario(section, misMatchThreshold)),
   ],
   fileNameTemplate: '{scenarioLabel}_{viewportLabel}',
   "paths": {
