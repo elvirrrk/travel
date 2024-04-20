@@ -1,0 +1,11 @@
+@mixin reset-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+@mixin reset-fieldset {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
