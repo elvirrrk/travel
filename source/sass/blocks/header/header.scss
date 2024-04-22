@@ -8,6 +8,7 @@
   background-color: #0266c1;
   font-family: $font-family-main;
   padding: 15px 15.3px 13.5px 14.5px;
+  transition: all 0.3s ease-in-out;
 
   @media (min-width: $width-tablet) {
     display: flex;
@@ -21,7 +22,7 @@
   }
 }
 
-.header__toggle-input {
+.header__toggle-button {
   grid-area: 'toggle';
   justify-content: start;
 

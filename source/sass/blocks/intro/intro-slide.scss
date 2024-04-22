@@ -1,0 +1,80 @@
+.intro__slide.swiper-slid {
+  position: relative;
+  min-height: 568px;
+}
+
+.intro__background {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: max-content;
+}
+
+.intro-back__img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  background-color: $button-color-disable;
+}
+
+.intro__content-wrapper {
+  padding: 144.3px 15px 160px;
+
+  @media (min-width: $width-tablet) {
+    padding: 342px 45px 402px 45px;
+  }
+
+  @media (min-width: $width-desktop) {
+    padding: 200px 120px 124.5px;
+  }
+}
+
+.intro__button {
+  display: block;
+  margin: 0 auto;
+  padding: 19px 20px;
+  width: 138px;
+  font-family: $font-family-main;
+  color: $font-color-light;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 16px;
+  text-align: center;
+  text-decoration: none;
+  background-color: $button-color-main;
+  border: 1px solid $button-color-main;
+  transition: all 0.3s ease-in-out;
+
+  @media (min-width: $width-tablet) {
+    padding: 18.5px 20px;
+  }
+
+  @media (min-width: $width-desktop) {
+    margin: 0 0 134px;
+  }
+
+  &:hover {
+    color: #1c3374;
+    border-color: #1c3374;
+    background-color: #ffffff;
+  }
+
+  &:focus {
+    border-color: transparent;
+    background-color: #ffffff;
+  }
+
+  &:active {
+    color: $font-color-light;
+    background-color: #1c3374;
+    border-color: #1c3374;
+  }
+}
+
+.intro__button--disabled {
+  pointer-events: none;
+  cursor: none;
+  color: $font-color-light;
+  background-color: #999999;
+  border-color: #999999;
+}

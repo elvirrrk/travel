@@ -1,56 +1,28 @@
-// stylized checkbox
-.header__toggle-input {
-  position: absolute;
-  z-index: -1;
-  opacity: 0;
-  cursor: none;
-
-  @media (min-width: $width-desktop) {
-    display: none;
-  }
-}
-
-.header__toggle-input + .header__toggle-label {
-  display: inline-flex;
-  align-items: center;
-  user-select: none;
-  cursor: pointer;
-
-  @media (min-width: $width-desktop) {
-    display: none;
-  }
-}
-
-.header__toggle-input + .header__toggle-label::before  {
-    content: "";
+.header__toggle-button {
     display: inline-block;
     width: 26px;
     height: 26px;
-    background-color: #ffffff;
-    mask-image: url("../../../img/open-toggle.svg");
-    mask-repeat: no-repeat;
-    mask-position: center center;
-    mask-size: contain;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    background: transparent url("../../../img/open-toggle.svg") no-repeat;
 
-    // может понадобиться
     @media (min-width: $width-tablet) {
       margin-bottom: 4px;
     }
-}
 
-.header__toggle-input:checked + .header__toggle-label::before {
-  background-image: url("../../../img/close-toggle.svg");
-  mask-image: none;
-  background-color: transparent;
+    @media (min-width: $width-desktop) {
+      display: none;
+    }
 
-  @media (min-width: $width-tablet) {
-    margin-bottom: 4px;
-  }
+    &--active {
+      background-image: url("../../../img/close-toggle.svg");
+    }
 }
 
 // stylized navigation
 
-.header__toggle-input:checked ~ .header__nav {
+.header__toggle-button--active ~ .header__nav {
   position: absolute;
   top: 100px;
   left: 0;

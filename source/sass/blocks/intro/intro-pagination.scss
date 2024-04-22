@@ -1,0 +1,37 @@
+.intro__pagination.swiper-pagination-bullets.swiper-pagination-horizontal {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  bottom: 85.5px;
+  left: 0;
+
+  @media (min-width: $width-tablet) {
+    bottom: 40px;
+    left: 0;
+    gap: 13px;
+  }
+
+  @media (min-width: $width-desktop) {
+    justify-content: right;
+    bottom: 116.5px;
+    left: -116px;
+  }
+}
+
+.swiper-pagination-bullet.pagination__button {
+  width: 16px;
+  height: 16px;
+  background: transparent;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+  opacity: 1;
+
+  @media (min-width: $width-tablet) {
+    width: 19.5px;
+    height: 19.5px;
+  }
+}
+
+.swiper-pagination-bullet-active.pagination__button {
+  background: #ffffff;
+}
